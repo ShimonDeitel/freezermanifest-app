@@ -1,0 +1,75 @@
+name: FreezerManifest
+options:
+  bundleIdPrefix: com.shimondeitel.freezerinv
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  FreezerManifest:
+    type: application
+    platform: iOS
+    sources:
+      - path: FreezerManifest
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.freezerinv
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: FreezerManifest/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  FreezerManifestTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: FreezerManifestTests
+      - path: FreezerManifest.storekit
+    dependencies:
+      - target: FreezerManifest
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.freezerinv.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  FreezerManifestUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: FreezerManifestUITests
+    dependencies:
+      - target: FreezerManifest
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.freezerinv.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  FreezerManifest:
+    build:
+      targets:
+        FreezerManifest: all
+        FreezerManifestTests: [test]
+        FreezerManifestUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: FreezerManifest.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: FreezerManifest.storekit
+      targets:
+        - FreezerManifestTests
+        - FreezerManifestUITests
+    archive:
+      config: Release

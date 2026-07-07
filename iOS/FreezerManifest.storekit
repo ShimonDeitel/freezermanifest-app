@@ -1,0 +1,42 @@
+{
+  "identifier" : "freezermanifest",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_locale" : "en_US"
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "freezermanifest_group",
+      "localizations" : [],
+      "name" : "Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "1.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "freezermanifest_pro_monthly",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Freezer-burn timeline alerts and unlimited item catalog",
+              "displayName" : "Freezer Manifest Pro",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.shimondeitel.freezerinv.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Freezer Manifest Pro Monthly",
+          "subscriptionGroupID" : "freezermanifest_group",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
